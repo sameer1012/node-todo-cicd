@@ -26,6 +26,7 @@ Welcome to the Todo List app deployment guide! This project demonstrates the end
      sudo apt-get update
      sudo apt-get install jenkins
      ```
+![image](https://github.com/user-attachments/assets/d3677c22-2c40-49e9-a1cb-2ef534ee635f)
 
 3. **Start and Verify Jenkins**
 
