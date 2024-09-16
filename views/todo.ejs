@@ -1,111 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Todo List APP test</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
-                color: #333;
-                margin: 0;
-                padding: 0;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-            h1 {
-                background-color: #4CAF50;
-                color: white;
-                margin: 0;
-                padding: 20px;
-                text-align: center;
-            }
+        h1 {
+            background-color: #3498db;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
 
-            ul {
-                list-style: none;
-                padding: 0;
-            }
+        ul {
+            list-style: none;
+            padding: 0;
+            width: 80%;
+            max-width: 600px;
+        }
 
-            ul li {
-                background: #fff;
-                border: 1px solid #ddd;
-                margin-bottom: 10px;
-                padding: 10px;
-                position: relative;
-            }
+        ul li {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            padding: 15px;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-            ul li a {
-                color: #333;
-                text-decoration: none;
-                font-weight: bold;
-            }
+        ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
 
-            ul li a:hover {
-                color: #4CAF50;
-            }
+        ul li a:hover {
+            color: #3498db;
+        }
 
-            .delete-btn {
-                color: red;
-                position: absolute;
-                right: 10px;
-                top: 10px;
-            }
+        .delete-btn {
+            color: #e74c3c;
+        }
 
-            .edit-btn {
-                color: #FFC107;
-                position: absolute;
-                right: 40px;
-                top: 10px;
-            }
+        .edit-btn {
+            color: #f39c12;
+        }
 
-            form {
-                background: #fff;
-                padding: 20px;
-                margin-top: 20px;
-            }
+        form {
+            background: #ffffff;
+            padding: 20px;
+            margin-top: 20px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
 
-            label {
-                display: block;
-                margin-bottom: 10px;
-            }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
 
-            input[type="text"] {
-                width: 100%;
-                padding: 10px;
-                margin-bottom: 10px;
-                border: 1px solid #ddd;
-            }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
 
-            input[type="submit"] {
-                background-color: #4CAF50;
-                color: white;
-                border: none;
-                padding: 10px 20px;
-                cursor: pointer;
-            }
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
 
-            input[type="submit"]:hover {
-                background-color: #45a049;
-            }
-        </style>
-    </head>
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo List - Made with ❤️️ by Sameer Raut</h1>
+    <ul>
+        <% todolist.forEach(function(todo, index) { %>
+        <li>
+            <a href="/todo/delete/<%= index %>" class="delete-btn">✘</a>
+            <a href="/todo/<%= index %>" class="edit-btn">✎</a>
+            <%- todo %>
+        </li>
+        <% }); %>
+    </ul>
 
-    <body>
-        <h1>Todo List - Made with ❤️️ by Sameer Raut </h1>
-        <ul>
-            <% todolist.forEach(function(todo, index) { %>
-            <li>
-                <a href="/todo/delete/<%= index %>" class="delete-btn">✘</a>
-                <a href="/todo/<%= index %>" class="edit-btn">✎</a>
-                <%- todo %>
-            </li>
-            <% }); %>
-        </ul>
-
-        <form action="/todo/add/" method="post">
-            <p>
-                <label for="newtodo">What should I do?</label>
-                <input type="text" name="newtodo" id="newtodo" autofocus />
-                <input type="submit" value="Add" />
-            </p>
-        </form>
-    </body>
+    <form action="/todo/add/" method="post">
+        <label for="newtodo">What should I do?</label>
+        <input type="text" name="newtodo" id="newtodo" autofocus placeholder="Enter new task" />
+        <input type="submit" value="Add" />
+    </form>
+</body>
 </html>
