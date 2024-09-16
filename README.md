@@ -109,5 +109,6 @@ Welcome to the Todo List app deployment guide! This project demonstrates the end
 Your Todo List app should now be accessible at `http://<your-ec2-public-ip>:8000`. This project demonstrates practical skills in cloud deployment, Docker containerization, and CI/CD automation using Jenkins.
 
 Feel free to modify any details according to your specific setup or preferences!
-![image](https://github.com/user-attachments/assets/e32a4816-57b0-4970-8963-57fbebae4e46)
+![image](https://github.com/user-attachments/assets/57ff956d-b657-4c9f-8c9e-2da38ea84df5)
+
 
