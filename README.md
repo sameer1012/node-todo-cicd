@@ -26,7 +26,7 @@ Welcome to the Todo List app deployment guide! This project demonstrates the end
      sudo apt-get update
      sudo apt-get install jenkins
      ```
-![image](https://github.com/user-attachments/assets/d3677c22-2c40-49e9-a1cb-2ef534ee635f)
+
 
 3. **Start and Verify Jenkins**
 
@@ -109,3 +109,4 @@ Welcome to the Todo List app deployment guide! This project demonstrates the end
 Your Todo List app should now be accessible at `http://<your-ec2-public-ip>:8000`. This project demonstrates practical skills in cloud deployment, Docker containerization, and CI/CD automation using Jenkins.
 
 Feel free to modify any details according to your specific setup or preferences!
+![image](https://github.com/user-attachments/assets/72b0f7f4-423b-4fd8-a616-41b691c406cc)
